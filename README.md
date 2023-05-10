@@ -37,9 +37,11 @@ Dependencies used by the environment, with * is optional, not required
   1. Change directory to PSO_Lab
   2. Type the following command in the command window and complete the parts that need to be manually installed according to the pop-up window prompts
 
+```matlab
 cd PSO_Lab
 
 run_lab setup
+```
 
 \------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -60,24 +62,34 @@ Installation environment and related dependencies.
 Type the following command in the command window to view the help
 documentation.
 
+```
 run_lab help
+```
+
+
 
   * zip, tar
 
 Compress PSO Lab, the files in these directories in the compressed package
 will not be preserved:
 
-.\\.temp
+```
+.\.temp
 
 .\data
 
 .\test
+```
 
 Type the following command in the command window to compress:
 
+```
 run_lab zip
 
 run_lab tar
+```
+
+
 
   * clear
 
@@ -86,20 +98,32 @@ cache that may not be saved, the user will be prompted whether to delete it.
 
 Type the following command in the command window to Clear Lab's cache:
 
+```
 run_lab clear
+```
+
+
 
   * select
 
 Select profiles and modes in the form of pop-up windows, type the following
 command in the command window to compress:
 
+```
 run_lab select
+```
+
+
 
 ### Run PSO Lab by run_lab
 
   * syntax
 
-run_lab config mode
+```
+run_lab [config] [mode]
+```
+
+
 
   * description
 
@@ -113,15 +137,19 @@ e.g. Run
 PSO_Lab\config\benchmark\single\basepso\basepso_primary_unimodal_1_benchmark_config.m
 by typing the following command in the command window:
 
+```
 run_lab
 .\config\benchmark\single\basepso\basepso_primary_unimodal_1_benchmark_config.m
 optimize
+```
 
 e.g. or if you know the full directory of config files like
 
+```
 run_lab
 E\PSO_Lab\config\benchmark\single\basepso\basepso_primary_unimodal_1_benchmark_config.m
 optimize
+```
 
 How to write a configuration file
 
