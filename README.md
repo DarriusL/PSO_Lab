@@ -11,13 +11,6 @@ version:1.3.0
 [introduction]PSO Lab is designed for auxiliary research of particle swarm
 optimization, verification algorithm, joint algorithm comparison
 
-Table of contents
-
-Dependencies and installation  Dependencies  Install Basic commands  Lab
-Command  Run PSO Lab by run_lab Configuration file  Description  Example
-Algorithms  Algorithm coding specification Parallel Computing  Enable
-Supported modes  par-optimize  search Reference
-
 \------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Dependencies and installation
