@@ -1,6 +1,8 @@
 # PSO Lab help document
 
-Author:DarriusL(darrius.l.work@gmail.com)
+A small project written in college may not be updated in the future.
+
+Author:DarriusL(darrius.lei@outlook.com)
 
 version:1.3.0
 
