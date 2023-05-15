@@ -1,12 +1,10 @@
 # PSO Lab help document
 
-A small project written in college may not be updated in the future.
 
-Author:DarriusL(darrius.lei@outlook.com)
 
-version:1.3.0
+**A small project written in college may not be updated in the future.**
 
-*Last updated date: 2022-11-18
+
 
 [introduction]PSO Lab is designed for auxiliary research of particle swarm
 optimization, verification algorithm, joint algorithm comparison
@@ -55,7 +53,7 @@ Installation environment and related dependencies.
 Type the following command in the command window to view the help
 documentation.
 
-```
+```matlab
 run_lab help
 ```
 
@@ -66,7 +64,7 @@ run_lab help
 Compress PSO Lab, the files in these directories in the compressed package
 will not be preserved:
 
-```
+```matlab
 .\.temp
 
 .\data
@@ -76,7 +74,7 @@ will not be preserved:
 
 Type the following command in the command window to compress:
 
-```
+```matlab
 run_lab zip
 
 run_lab tar
@@ -91,7 +89,7 @@ cache that may not be saved, the user will be prompted whether to delete it.
 
 Type the following command in the command window to Clear Lab's cache:
 
-```
+```matlab
 run_lab clear
 ```
 
@@ -102,7 +100,7 @@ run_lab clear
 Select profiles and modes in the form of pop-up windows, type the following
 command in the command window to compress:
 
-```
+```matlab
 run_lab select
 ```
 
@@ -112,7 +110,7 @@ run_lab select
 
   * syntax
 
-```
+```matlab
 run_lab [config] [mode]
 ```
 
@@ -130,7 +128,7 @@ e.g. Run
 PSO_Lab\config\benchmark\single\basepso\basepso_primary_unimodal_1_benchmark_config.m
 by typing the following command in the command window:
 
-```
+```matlab
 run_lab
 .\config\benchmark\single\basepso\basepso_primary_unimodal_1_benchmark_config.m
 optimize
@@ -138,7 +136,7 @@ optimize
 
 e.g. or if you know the full directory of config files like
 
-```
+```matlab
 run_lab
 E\PSO_Lab\config\benchmark\single\basepso\basepso_primary_unimodal_1_benchmark_config.m
 optimize
@@ -168,6 +166,7 @@ which can handle vectors.
 
 e.g.1
 
+```matlab
 function stc = config
 
 ...
@@ -185,9 +184,11 @@ stc.fit_fun = fit_function_handle;
 ...
 
 end
+```
 
 e.g.2
 
+```matlab
 function stc = config
 
 ...
@@ -209,6 +210,7 @@ function val = fit_function(x)
 val = sum(abs(x(1:end - 1) - x(2:end)));
 
 end
+```
 
 It should be noted that the fitness function handle that does not meet the
 specification will be detected and the program will be interrupted.
@@ -255,6 +257,7 @@ test function:
 
 To choose a test level, you can use the following code:
 
+```matlab
 testfun_stc = math_util().test_function("primary");
 
 testfun_stc = math_util().test_function("medium");
@@ -262,6 +265,7 @@ testfun_stc = math_util().test_function("medium");
 testfun_stc = math_util().test_function("advanced");
 
 testfun_stc = math_util().test_function("precision");
+```
 
 A note on function type:
 
@@ -332,6 +336,7 @@ and dimension can also be determined.
 
 e.g.Select primary and unimodal test function 1 with dimension 1000
 
+```matlab
 function stc = config
 
 testfun_stc = math_util().test_function("primary");
@@ -355,6 +360,7 @@ stc.size = [testfun_stc.varset.dim, 1000];
 ...
 
 end
+```
 
 *With whose fitness function that needs to be constrained by constraints, add the corresponding constraint code to the corresponding algorithm.
 
@@ -364,6 +370,7 @@ end
 
 If you need to save the data after the end of the run, set save to true:
 
+```matlab
 function stc = config
 
 ...
@@ -373,6 +380,9 @@ stc.save = true;
 ...
 
 end
+```
+
+
 
   * parallel processing
 
@@ -380,6 +390,7 @@ see Parallel Computing
 
   * algorithm
 
+```matlab
 function stc = config
 
 ...
@@ -389,6 +400,7 @@ stc.algorithm = "BasePSO";
 ...
 
 end
+```
 
 Algorithms currently available include:
 
@@ -422,6 +434,7 @@ file:
 
   * size of the iteration
 
+```matlab
 function stc = config
 
 ...
@@ -431,12 +444,14 @@ stc.size = [30, 1000];
 ...
 
 end
+```
 
 The size of this iteration is defined by a 1*2 row vector: [ dimensions,
 number of particles]
 
   * Maximum number of iterations
 
+```matlab
 function stc = config
 
 ...
@@ -446,12 +461,14 @@ stc.num_Iter = 1000;
 ...
 
 end
+```
 
 The final iteration end condition that does not meet other iteration end
 conditions.
 
   * Print evaluation cycle
 
+```matlab
 function stc = config
 
 ...
@@ -461,9 +478,13 @@ stc.evalu_times = 100;
 ...
 
 end
+```
+
+
 
   * Exit condition
 
+```matlab
 function stc = config
 
 ...
@@ -475,11 +496,13 @@ stc.max_tolerance_times = 100;
 ...
 
 end
+```
 
 The exit condition is not necessary and can be set to an empty array.
 
   * Basic algorithm parameter settings
 
+```matlab
 function stc = config
 
 %dimensions:30
@@ -507,6 +530,9 @@ stc.v_range = 0.05 * [-d_var, d_var];
 ...
 
 end
+```
+
+
 
 > individual learning factor (default 1.5)
 
@@ -561,6 +587,7 @@ see below:
 @PSO_Lab\config\benchmark\joint\joint_all_primary_unimodal_1_benchmark_config.m
 (code for search mode)
 
+```matlab
 %Joint simulation, all algorithms, primary, unimodal test function 1
 
 function stc = joint_all_primary_unimodal_1_benchmark_config
@@ -733,6 +760,7 @@ stc.cpso.chaos_mu = 4;
 stc.cpso.chaos_length = 500;
 
 end
+```
 
 \------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -752,6 +780,7 @@ can just redefine some methods.
 It is better not to change the dimension of the same property used by
 inheritance, so as to avoid some unspeakable errors.
 
+```matlab
 classdef BasePSO < handle
 
 ...
@@ -821,12 +850,16 @@ end
 ...
 
 end
+```
+
+
 
 > Methods of BasePSO:
 
 For specific implementation, please refer to the code:
 PSO_Lab\algorithm\BasePSO
 
+```matlab
 classdef BasePSO < handle
 
 ...
@@ -931,6 +964,7 @@ end
 ...
 
 end
+```
 
 \------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -944,6 +978,7 @@ end
 
 Modify the configuration file to enable parallel processing.
 
+```matlab
 function config
 
 ...
@@ -957,6 +992,7 @@ stc.para_num = 4;
 ...
 
 end
+```
 
 para_num: the amount of parallel processing, limited by the local computer,
 recommended 4 or a divisor of 4.
@@ -975,17 +1011,21 @@ e.g.So configuration (
 
 %single thread operation(run after disableing Parallel Computing)
 
+```matlab
 run_lab
 .\config\benchmark\single\basepso\basepso_primary_unimodal_1_benchmark_config.m
 optimize
+```
 
 
 
 %multi-threaded operation(run after enableing Parallel Computing)
 
+```matlab
 run_lab
 .\config\benchmark\single\basepso\basepso_primary_unimodal_1_benchmark_config.m
 par-optimize
+```
 
 The results are as follows:
 
